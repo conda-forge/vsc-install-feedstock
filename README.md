@@ -3,11 +3,11 @@ About vsc-install
 
 Home: https://github.com/hpcugent/vsc-install
 
-Package license: LGPLv2+
+Package license: LGPL-2.0
 
 Feedstock license: BSD 3-Clause
 
-Summary: vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group
+Summary: vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group.
 
 
 

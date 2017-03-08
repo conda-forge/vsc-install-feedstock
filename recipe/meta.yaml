@@ -1,30 +1,25 @@
-{% set name = "vsc-install" %}
 {% set version = "0.10.22" %}
-{% set md5 = "1b9385aaa7c779e45633f0e5f2742724" %}
 
 package:
-  name: {{ name }} 
+  name: vsc-install
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.python.org/packages/94/54/611cb71c61aae9833ee87e7d86768e9a86b411afe9f608c15e267fe7a986/{{name}}-{{version}}.tar.gz
-  md5: {{ md5 }} 
+  fn: vsc-install-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/v/vsc-install/vsc-install-{{ version }}.tar.gz
+  sha256: c128c98dd173c9a0d52e1e6c228a4aff6ed4fe20cd244acf72abf08ae198f430
 
 build:
   preserve_egg_dir: True
   number: 0
   skip: True  # [win or py3k]
-  script: |
-     python setup.py install  \
-     --single-version-externally-managed \
-     --record=record.txt 
+  script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
     - python
     - setuptools
-    - certifi ==2016.9.26
+    - certifi 2016.9.26
     - mock
     - prospector >=0.12.1
     - pylint
@@ -32,10 +27,10 @@ requirements:
   run:
     - python
     - setuptools
-    - certifi ==2016.9.26
+    - certifi 2016.9.26
     - mock
     - prospector >=0.12.1
-    - pylint 
+    - pylint
 
 test:
   imports:
@@ -44,12 +39,12 @@ test:
 
 about:
   home: https://github.com/hpcugent/vsc-install
-  license: 'LGPLv2+'
-  license_file: 'LICENSE'
-  summary: "vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group"
+  license: LGPL-2.0
+  license_file: LICENSE
+  summary: "vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group."
   license_family: LGPL
 
 extra:
   recipe-maintainers:
-    - jerowe 
+    - jerowe
     - boegel
