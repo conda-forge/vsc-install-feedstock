@@ -1,4 +1,4 @@
-{% set version = "0.11.5" %}
+{% set version = "0.12.3" %}
 
 package:
   name: vsc-install
@@ -7,11 +7,11 @@ package:
 source:
   fn: vsc-install-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/v/vsc-install/vsc-install-{{ version }}.tar.gz
-  sha256: 0af9608ba374124a97e3297e5b2fc38d6b618e59de70594757e3efb6107c856c
+  sha256: d225a58b9fb60af334015a64801e01a07535eb3f8089165d9967a67b0f21fa62
 
 build:
   preserve_egg_dir: True
-  number: 1000
+  number: 0
   skip: True  # [win or py3k]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
