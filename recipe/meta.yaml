@@ -1,4 +1,4 @@
-{% set version = "0.12.3" %}
+{% set version = "0.16.0" %}
 
 package:
   name: vsc-install
@@ -7,12 +7,12 @@ package:
 source:
   fn: vsc-install-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/v/vsc-install/vsc-install-{{ version }}.tar.gz
-  sha256: d225a58b9fb60af334015a64801e01a07535eb3f8089165d9967a67b0f21fa62
+  sha256: 0ed0213e79b094999b5b90b0c492dd38de3d240ff229bfbe9b775183bdc8040c
 
 build:
-  preserve_egg_dir: True
+  preserve_egg_dir: true
   number: 0
-  skip: True  # [win or py3k]
+  skip: true  # [win or py3k]
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
@@ -41,7 +41,7 @@ about:
   home: https://github.com/hpcugent/vsc-install
   license: LGPL-2.0
   license_file: LICENSE
-  summary: "vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group."
+  summary: vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group.
   license_family: LGPL
 
 extra:
