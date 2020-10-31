@@ -1,50 +1,49 @@
-{% set version = "0.12.3" %}
+{% set name = "vsc-install" %}
+{% set version = "0.17.1" %}
 
 package:
-  name: vsc-install
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: vsc-install-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/v/vsc-install/vsc-install-{{ version }}.tar.gz
-  sha256: d225a58b9fb60af334015a64801e01a07535eb3f8089165d9967a67b0f21fa62
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/vsc-install-{{ version }}.tar.gz
+  sha256: 01431ec39054fdc95b4b4bff28fb988fc36f5504e54c37cccccf5f3a76d646a5
 
 build:
-  preserve_egg_dir: True
   number: 0
-  skip: True  # [win or py3k]
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
-    - python
+  host:
+    - pip
+    - python >=3.6
     - setuptools
-    - certifi 2016.9.26
-    - mock
-    - prospector >=0.12.1
-    - pylint
-
   run:
-    - python
-    - setuptools
-    - certifi 2016.9.26
     - mock
     - prospector >=0.12.1
     - pylint
+    - python >=3.6
+    - setuptools <42.0
 
 test:
   imports:
     - vsc
     - vsc.install
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/hpcugent/vsc-install
-  license: LGPL-2.0
-  license_file: LICENSE
-  summary: "vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group."
+  summary: vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group
+  license: LGPL-2.0-or-later
   license_family: LGPL
+  license_file: LICENSE
 
 extra:
   recipe-maintainers:
-    - jerowe
+    - anthchirp
     - boegel
+    - jerowe
