@@ -1,11 +1,11 @@
-About vsc-install
-=================
+About vsc-install-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/vsc-install-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/hpcugent/vsc-install
 
 Package license: LGPL-2.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/vsc-install-feedstock/blob/main/LICENSE.txt)
 
 Summary: vsc-install provides shared setuptools functions and classes for python libraries developed by UGent's HPC group
 
