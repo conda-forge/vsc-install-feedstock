@@ -1,5 +1,5 @@
 {% set name = "vsc-install" %}
-{% set version = "0.18.9" %}
+{% set version = "0.18.11" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/vsc-install-{{ version }}.tar.gz
-  sha256: c91e885fc20167f1e571955011422d44159462fd9993e3997c3631088cf0cb9d
+  sha256: a750bdb9ca93688d7b856d9d901b52f6a1a66ea25b74d827c9ebd50fa7b4a592
 
 build:
   number: 0
